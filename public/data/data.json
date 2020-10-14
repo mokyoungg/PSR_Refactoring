@@ -1,0 +1,95 @@
+{
+    "data": [
+      {
+        "id": "m01",
+        "name": "denim jacket",
+        "brand": "abc",
+        "image": "https://oceans.tokyo.jp/wp-content/uploads/2019/10/19110863_19_08_31_OCEANS-507062.jpg",
+        "price": 325000,
+        "color": "blue",
+        "category": "jacket"
+      },
+      {
+        "id": "m02",
+        "name": "jumper",
+        "brand": "hahaha",
+        "image": "https://66.media.tumblr.com/fc6d7a87e6c7db5f7acaa31a32215db3/tumblr_mnfo5lMzWE1qaw0wso1_500.jpg",
+        "price": 225000,
+        "color": "purple",
+        "category": "jacket"
+      },
+      {
+        "id": "fm01",
+        "name": "check shirt",
+        "brand": "abc",
+        "image": "https://i.pinimg.com/564x/da/1d/0f/da1d0f28788ad5571a7dc75a94ee6673.jpg",
+        "price": 70000,
+        "color": "white",
+        "category": "shirt"
+      },
+      {
+        "id": "fm02",
+        "name": "navy knit",
+        "brand": "lalala",
+        "image": "https://i.pinimg.com/236x/bf/a1/ba/bfa1ba51abf988f1fb75ca295613a8ec.jpg",
+        "price": 80000,
+        "color": "navy",
+        "category": "knit"
+      },
+      {
+        "id": "fm03",
+        "name": "leather jacket",
+        "brand": "lalala",
+        "image": "https://i.pinimg.com/564x/a1/a6/5c/a1a65ca5e05ed6f26ebcb171fdc83848.jpg",
+        "price": 320000,
+        "color": "black",
+        "category": "jacket"
+      },
+      {
+        "id": "fm04",
+        "name": "denim jacket",
+        "brand": "lalala",
+        "image": "https://i.pinimg.com/564x/44/f0/2e/44f02e223feed741153c1421a88f6f08.jpg",
+        "price": 290000,
+        "color": "blue",
+        "category": "jacket"
+      },
+      {
+        "id": "fm05",
+        "name": "brwon knit",
+        "brand": "hahaha",
+        "image": "https://i.pinimg.com/564x/cf/96/e7/cf96e735976d22e8aef92000ec3f06b2.jpg",
+        "price": 90000,
+        "color": "brown",
+        "category": "knit"
+      },
+      {
+        "id": "m03",
+        "name": "green jacket",
+        "brand": "abc",
+        "image": "https://i.pinimg.com/236x/fa/db/b3/fadbb3266267ab645d269d9811558f6d.jpg",
+        "price": 190000,
+        "color": "green",
+        "category": "jacket"
+      },
+      {
+        "id": "m04",
+        "name": "leather jacket",
+        "brand": "abc",
+        "image": "https://i.pinimg.com/564x/e6/b4/d9/e6b4d9f8a9877154ba0ede443aa59768.jpg",
+        "price": 370000,
+        "color": "brown",
+        "category": "jacket"
+      },
+      {
+        "id": "fm06",
+        "name": "white shirt",
+        "brand": "lalala",
+        "image": "https://i.pinimg.com/564x/b5/16/79/b51679cb2e49df58841d78072206234a.jpg",
+        "price": 70000,
+        "color": "white",
+        "category": "shirt"
+      }
+    ]
+  }
+  
