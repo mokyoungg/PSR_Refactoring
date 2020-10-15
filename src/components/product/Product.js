@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const Product = ({ data }) => {
-  const { image, name, price, brand } = data;
+const Product = ({ product }) => {
+  const { image, name, price, brand } = product;
 
   const renderProduct = () => {
     return (

@@ -1,5 +1,4 @@
-{
-    "data": [
+[
       {
         "id": "m01",
         "name": "denim jacket",
@@ -91,5 +90,4 @@
         "category": "shirt"
       }
     ]
-  }
   
