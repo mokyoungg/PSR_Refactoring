@@ -10,14 +10,22 @@ class ProductList extends React.Component {
   }
 
   renderList = () => {
-    const { datas } = this.props;
-    if (!datas) {
+    const { products, filter } = this.props;
+    if (!products) {
       return null;
-    } else {
-      return datas.map((data) => {
+    } else if (products && filter.length === 0) {
+      return products.map((product) => {
         return (
           <ListWrap>
-            <Product data={data} />
+            <Product product={product} />
+          </ListWrap>
+        );
+      });
+    } else if (products && filter.length > 0) {
+      return filter.map((product) => {
+        return (
+          <ListWrap>
+            <Product product={product} />
           </ListWrap>
         );
       });
@@ -30,9 +38,10 @@ class ProductList extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  //console.log(state);
+  console.log("state :", state);
   return {
-    datas: state.data.data,
+    products: state.data,
+    filter: state.filter,
   };
 };
 
