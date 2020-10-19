@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { filterRequest } from "../../actions";
 
 const Filter = ({ category, product, filterRequest, filter }) => {
-  console.log(filter);
   return (
     <Wrap>
       <CheckBox
