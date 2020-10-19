@@ -4,22 +4,22 @@ import { connect } from "react-redux";
 import Filter from "./Filter";
 
 class FilterList extends React.Component {
-  handleArray = (array, key) => {
+  handleArray = (array, category) => {
     let result = [];
     for (let i = 0; i < array.length; i++) {
-      result.push(array[i][key]);
+      result.push(array[i][category]);
     }
     return Array.from(new Set(result));
   };
 
-  renderList = (key) => {
+  renderList = (category) => {
     const { products } = this.props;
 
     return (
       <div>
-        <p>{key}</p>
-        {this.handleArray(products, key).map((product) => {
-          return <Filter id={product} category={key} product={product} />;
+        <p>{category}</p>
+        {this.handleArray(products, category).map((product) => {
+          return <Filter category={category} product={product} />;
         })}
       </div>
     );

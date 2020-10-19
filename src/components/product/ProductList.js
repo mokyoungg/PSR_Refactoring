@@ -10,11 +10,19 @@ class ProductList extends React.Component {
   }
 
   renderList = () => {
-    const { products } = this.props;
+    const { products, filter } = this.props;
     if (!products) {
       return null;
-    } else {
+    } else if (products && filter.length === 0) {
       return products.map((product) => {
+        return (
+          <ListWrap>
+            <Product product={product} />
+          </ListWrap>
+        );
+      });
+    } else if (products && filter.length > 0) {
+      return filter.map((product) => {
         return (
           <ListWrap>
             <Product product={product} />
@@ -33,6 +41,7 @@ const mapStateToProps = (state) => {
   console.log("state :", state);
   return {
     products: state.data,
+    filter: state.filter,
   };
 };
 
