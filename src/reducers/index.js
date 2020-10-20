@@ -1,18 +1,16 @@
 import { combineReducers } from "redux";
 
-const productReducer = (state = [], action) => {
-  switch (action.type) {
-    case "FETCH_DATA":
-      return action.payload;
-    default:
-      return state;
-  }
+const initialState = {
+  data: [],
+  filterData: [],
 };
 
-const filterReducer = (state = [], action) => {
+const productReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "FETCH_DATA":
+      return { ...state, data: action.payload, filterData: action.payload };
     case "FILTER_REQUEST":
-      return action.payload;
+      return { ...state, filterData: action.payload };
     default:
       return state;
   }
@@ -20,5 +18,4 @@ const filterReducer = (state = [], action) => {
 
 export default combineReducers({
   data: productReducer,
-  filter: filterReducer,
 });

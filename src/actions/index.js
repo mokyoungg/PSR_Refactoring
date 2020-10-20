@@ -16,13 +16,16 @@ export const fetchData = () => async (dispatch) => {
   initialState.data = response.data;
   initialState.filterData = response.data;
 
-  dispatch({ type: "FETCH_DATA", payload: initialState.data });
+  dispatch({
+    type: "FETCH_DATA",
+    payload: initialState.data,
+  });
 };
 
 export const filterRequest = (key, value) => {
   const { data } = initialState;
 
-  //데이터 필터하기
+  //데이터 필터하는 함수
   const multiFilter = (arr, filters) => {
     const filterKeys = Object.keys(filters);
     return arr.filter((eachObj) => {
@@ -52,4 +55,11 @@ export const filterRequest = (key, value) => {
       payload: multiFilter(data, collected),
     };
   }
+};
+
+export const filterPrice = () => {
+  return {
+    type: "FILTER_PRICE",
+    payload: null,
+  };
 };
