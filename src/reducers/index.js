@@ -1,18 +1,26 @@
 import { combineReducers } from "redux";
 
-const productReducer = (state = [], action) => {
-  switch (action.type) {
-    case "FETCH_DATA":
-      return action.payload;
-    default:
-      return state;
-  }
+const INITIAL_STATE = {
+  data: [],
+  filterData: [],
+  priceRange: [],
+  filterRange: [],
 };
 
-const filterReducer = (state = [], action) => {
+const productReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case "FETCH_DATA":
+      return {
+        ...state,
+        data: action.payload,
+        filterData: action.payload,
+        priceRange: action.priceRange,
+        filterRange: action.filterRange,
+      };
     case "FILTER_REQUEST":
-      return action.payload;
+      return { ...state, filterData: action.payload };
+    case "FILTER_PRICE":
+      return { ...state, filterData: action.payload };
     default:
       return state;
   }
@@ -20,5 +28,4 @@ const filterReducer = (state = [], action) => {
 
 export default combineReducers({
   data: productReducer,
-  filter: filterReducer,
 });

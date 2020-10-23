@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import Filter from "./Filter";
+import PriceFilter from "./PriceFilter";
 
 class FilterList extends React.Component {
   handleArray = (array, category) => {
@@ -35,6 +36,9 @@ class FilterList extends React.Component {
           <div>{this.renderList("category")}</div>
           <div>{this.renderList("brand")}</div>
           <div>{this.renderList("color")}</div>
+          <div>
+            <PriceFilter />
+          </div>
         </Wrap>
       );
     }
@@ -43,7 +47,7 @@ class FilterList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.data,
+    products: state.data.data,
   };
 };
 

@@ -38,7 +38,6 @@ class ProductList extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("state :", state);
   return {
     products: state.data,
     filter: state.filter,
