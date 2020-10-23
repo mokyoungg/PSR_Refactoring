@@ -25,17 +25,7 @@ const productReducer = (state = INITIAL_STATE, action) => {
       return state;
   }
 };
-/*
-const priceReducer = (state = null, action) => {
-  switch (action.type) {
-    case "FILTER_PRICE":
-      return action.payload;
-    default:
-      return state;
-  }
-};
-*/
+
 export default combineReducers({
   data: productReducer,
-  //price: priceReducer,
 });
