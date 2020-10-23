@@ -3,6 +3,7 @@ import data from "../apis/data";
 const initialState = {
   data: [],
   filterData: [],
+  priceRange: [],
 };
 
 const collected = {
@@ -13,12 +14,27 @@ const collected = {
 
 export const fetchData = () => async (dispatch) => {
   const response = await data.get();
+  const priceRange = await response.data.map((data) => data.price);
+
   initialState.data = response.data;
   initialState.filterData = response.data;
 
+  const getValue = (array) => {
+    let result = [];
+    const max = Math.max.apply(null, array);
+    const min = Math.min.apply(null, array);
+    result = [min, max];
+    return result;
+  };
+  const range = getValue(priceRange);
+
+  initialState.priceRange = range;
+
   dispatch({
     type: "FETCH_DATA",
-    payload: initialState.data,
+    payload: response.data,
+    priceRange: range,
+    filterRange: range,
   });
 };
 
@@ -41,6 +57,7 @@ export const filterRequest = (key, value) => {
   //필터
   if (!collected[key].includes(value)) {
     collected[key] = collected[key].concat(value);
+
     return {
       type: "FILTER_REQUEST",
       payload: multiFilter(data, collected),
@@ -57,9 +74,39 @@ export const filterRequest = (key, value) => {
   }
 };
 
-export const filterPrice = () => {
-  return {
-    type: "FILTER_PRICE",
-    payload: null,
-  };
+export const filterPrice = (array) => (dispatch) => {
+  const { filterData, priceRange } = initialState;
+
+  setTimeout(() => {
+    const filteredData = filterData.filter(
+      (data) => data.price > array[0] && data.price < array[1]
+    );
+
+    dispatch({ type: "FILTER_PRICE", payload: filteredData });
+  }, 2000);
+
+  clearTimeout();
 };
+
+// if (term && !results.length) {
+//   search();
+// } else {
+//   // term의 변화마다 검색되는 것을 제한
+//   const tiemoutId = setTimeout(() => {
+//     // 빈 문자열일 때 검색 제한
+//     if (term) {
+//       search();
+//     }
+//   }, 1000);
+
+//   // 이전 타이머를 취소하고 다시 타이머가 시작됨
+//   return () => {
+//     clearTimeout(tiemoutId);
+//   };
+// }
+// }, [term]);
+
+// const handleChange = () => {
+//   setTimeout(() => console.log("짠"), 2000);
+//   clearTimeout();
+// };
