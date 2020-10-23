@@ -16,6 +16,7 @@ const Filter = ({ category, product, filterRequest, filter }) => {
 };
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     filter: state.filter,
   };
