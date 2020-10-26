@@ -1,6 +1,6 @@
 # PSR_Refactoring
 이전에 작성했던 코드를 리팩토링</br>
-https://github.com/nickanism/psr-frontend </br>
+https://github.com/mokyoungg/psr-frontend </br>
 </br>
 이전의 코드에선 AI 기술이 들어간 데이터를 사용했으나</br>
 현재는 불가능하여 연습하고 싶은 기능 위주로 리팩토링 하였다.
