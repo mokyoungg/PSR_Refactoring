@@ -74,39 +74,15 @@ export const filterRequest = (key, value) => {
   }
 };
 
-export const filterPrice = (array) => (dispatch) => {
-  const { filterData, priceRange } = initialState;
+export const filterPrice = (array) => {
+  const { filterData } = initialState;
 
-  setTimeout(() => {
-    const filteredData = filterData.filter(
-      (data) => data.price > array[0] && data.price < array[1]
-    );
+  const filteredData = filterData.filter(
+    (el) => el.price > array[0] && el.price < array[1]
+  );
 
-    dispatch({ type: "FILTER_PRICE", payload: filteredData });
-  }, 2000);
-
-  clearTimeout();
+  return {
+    type: "FILTER_PRICE",
+    payload: filteredData,
+  };
 };
-
-// if (term && !results.length) {
-//   search();
-// } else {
-//   // term의 변화마다 검색되는 것을 제한
-//   const tiemoutId = setTimeout(() => {
-//     // 빈 문자열일 때 검색 제한
-//     if (term) {
-//       search();
-//     }
-//   }, 1000);
-
-//   // 이전 타이머를 취소하고 다시 타이머가 시작됨
-//   return () => {
-//     clearTimeout(tiemoutId);
-//   };
-// }
-// }, [term]);
-
-// const handleChange = () => {
-//   setTimeout(() => console.log("짠"), 2000);
-//   clearTimeout();
-// };

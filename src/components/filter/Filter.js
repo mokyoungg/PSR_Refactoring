@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { filterRequest } from "../../actions";
 
-const Filter = ({ category, product, filterRequest, filter }) => {
+const Filter = ({ category, product, filterRequest }) => {
   return (
     <Wrap>
       <CheckBox
@@ -15,14 +15,7 @@ const Filter = ({ category, product, filterRequest, filter }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log("state");
-  return {
-    filter: state.filter,
-  };
-};
-
-export default connect(mapStateToProps, { filterRequest })(Filter);
+export default connect(null, { filterRequest })(Filter);
 
 const Wrap = styled.div`
   display: flex;
